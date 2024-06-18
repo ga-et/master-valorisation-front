@@ -1,0 +1,37 @@
+<p>{{ centreCoutCode }}</p>
+<div>
+  <table mat-table [dataSource]="this.departsEntity" class="mat-elevation-z8" style="width: 800px;">
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef> Date </th>
+      <td mat-cell *matCellDef="let element"> {{element.date }} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="typecontrat">
+      <th mat-header-cell *matHeaderCellDef> Type contrat </th>
+      <td mat-cell *matCellDef="let element"> {{element.typecontrat}} </td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="taux">
+      <th mat-header-cell *matHeaderCellDef> Taux </th>
+      <td mat-cell *matCellDef="let element"> {{element.taux*100}}% </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="lieutravail">
+      <th mat-header-cell *matHeaderCellDef> Lieutravail </th>
+      <td mat-cell *matCellDef="let element"> {{element.lieutravail}} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="anciennete">
+      <th mat-header-cell *matHeaderCellDef> Anciennete </th>
+      <td mat-cell *matCellDef="let element"> {{element.anciennete.toFixed(0)}} mois </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <app-raisoncentre></app-raisoncentre>
+</div>
