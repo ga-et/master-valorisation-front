@@ -30,12 +30,16 @@ export class GrapheService {
     );
   }
 
-  async getRaisonByCentreCoutFetch(code: String):Promise<any> {
-    fetch(this.url + '/centrecout/' + code + '/raison')
-      .then(response => response.arrayBuffer()).then(buffer => JSON.parse(new TextDecoder("UTF-8").decode(buffer)))
-      .then((resp) => {
-        return resp;
-      });
+  getAllRaison(): Observable<Graphe[]> {
+    return this.http.get<Graphe[]>(this.url + '/raison').pipe(
+      tap(graphes => this.graphes.set(graphes))
+    );
+  }
+
+  getAllRaisonTauxCompare(): Observable<Graphe[]> {
+    return this.http.get<Graphe[]>(this.url + '/raison/taux').pipe(
+      tap(graphes => this.graphes.set(graphes))
+    );
   }
 
   constructor() { }

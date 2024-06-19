@@ -24,4 +24,10 @@ export class DepartService {
       tap(departs => this.departs.set(departs))
     );
   }
+
+  getAllDepartByRaisonOfs(raisonOfs: String): Observable<Depart[]> {
+    return this.http.get<Depart[]>(this.url + '/raison/' + raisonOfs).pipe(
+      tap(departs => this.departs.set(departs))
+    );
+  }
 }

@@ -1,0 +1,41 @@
+<p>formulaire works!</p>
+<form [formGroup]="entityForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="date">Date départ</label>
+      <input id="date" formControlName="date" required>
+    </div>
+    <div>
+      <label for="hrbp">hrbp</label>
+      <input id="hrbp" formControlName="hrbp" required>
+    </div>
+    <div>
+      <label for="entree">entree</label>
+      <input id="entree" formControlName="entree" required>
+    </div>
+    <div>
+      <label for="matricule">matricule</label>
+      <input id="matricule" formControlName="matricule" required>
+    </div>
+    <div>
+      <label for="typecontrat">typecontrat</label>
+      <input id="typecontrat" formControlName="typecontrat" required>
+    </div>
+    <div>
+      <label for="taux">taux</label>
+      <input id="taux" formControlName="taux" required>
+    </div>
+    <div>
+      <label for="lieutravail">lieutravail</label>
+      <input id="lieutravail" formControlName="lieutravail" required>
+    </div>
+    <div>
+      <label for="motif">motif</label>
+      <input id="motif" formControlName="motif" required>
+    </div>
+    <div>
+      <label for="anciennete">anciennete</label>
+      <input id="anciennete" formControlName="anciennete" required>
+    </div>
+    <button type="submit">Envoyer</button>
+</form>
+  
